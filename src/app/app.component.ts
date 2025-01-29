@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
     canvas.height = window.innerHeight;
   
     const circles: { x: number; y: number; r: number; dx: number; dy: number }[] = [];
-    const numCircles = 50;
-    const maxDistance = 100; // Distancia máxima para conectar círculos
+    const numCircles = 75;
+    const maxDistance = 200; // Distancia máxima para conectar círculos
   
     // Crear círculos con posiciones aleatorias
     for (let i = 0; i < numCircles; i++) {
@@ -68,14 +68,16 @@ export class AppComponent implements OnInit {
       for (const circle of circles) {
         ctx.beginPath();
         ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 99, 77, 0.8)';
+        ctx.fillStyle = 'rgba(98, 149, 132, 0.8)';
         ctx.fill();
         circle.x += circle.dx;
         circle.y += circle.dy;
   
-        // Rebotar en los bordes
-        if (circle.x + circle.r > canvas.width || circle.x - circle.r < 0) circle.dx *= -1;
-        if (circle.y + circle.r > canvas.height || circle.y - circle.r < 0) circle.dy *= -1;
+        // Si el círculo toca el borde, reposiciónalo en una posición aleatoria
+        if (circle.x + circle.r > canvas.width || circle.x - circle.r < 0 || circle.y + circle.r > canvas.height || circle.y - circle.r < 0) {
+          circle.x = Math.random() * canvas.width;  // Posición aleatoria en el eje X
+          circle.y = Math.random() * canvas.height; // Posición aleatoria en el eje Y
+        }
       }
   
       // Dibujar líneas entre círculos cercanos
@@ -92,4 +94,5 @@ export class AppComponent implements OnInit {
       canvas.height = window.innerHeight;
     });
   }
+  
 }
