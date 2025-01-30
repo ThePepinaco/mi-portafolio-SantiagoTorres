@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mi-portafolio-santiago-torres",
+            "outputPath": "dist/mi-portafolio-SantiagoTorres",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
