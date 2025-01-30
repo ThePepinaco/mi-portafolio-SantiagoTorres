@@ -1,62 +1,66 @@
-/* Reset de márgenes y relleno para asegurarse de que no haya espacios extraños */
+/* Reset de márgenes y relleno */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Estilo general del header */
-  .header {
-    width: 100%;
-    position: fixed;  /* Hace que el header se quede fijo en la parte superior */
-    top: 0;
-    left: 0;
-    background-color: rgb(36, 54, 66);  /* Color de fondo */
-    color: white;  /* Color de texto */
-    padding: 10px 0;  /* Espaciado de arriba y abajo */
-    z-index: 1000;  /* Asegura que el header esté por encima de otros elementos */
-  }
-  
-  /* Logo y título */
-  .logo {
-    text-align: center;  /* Centra el contenido dentro de su contenedor */
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  /* Navegación */
-  .nav {
-    display: flex;
-    justify-content: center;  /* Centra los elementos de navegación */
-    align-items: center;  /* Alinea verticalmente los elementos */
-  }
-  
-  .nav ul {
-    display: flex;  /* Disposición en línea para los elementos de la lista */
-    list-style: none;  /* Elimina los puntos de las listas */
-  }
-  
-  .nav li {
-    margin: 5px 15px;  /* Espacio entre cada elemento de la lista */
-  }
-  
-  .nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: color 0.3s;
-  }
-  
-  .nav a:hover {
-    color: rgb(98, 149, 132);  /* Color al pasar el ratón sobre el enlace */
-  }
-  
-  /* Asegura que los componentes no estén cubiertos por el header */
-  body {
-    margin-top: 60px;  /* Ajusta este valor según el alto de tu header */
-  }
-  
-  /* Si es necesario, puedes agregar más estilos para tus componentes aquí */
-  #sobre-mi {
-    margin-top: 80px; /* Ajusta según el tamaño del header */
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo del header flotante */
+.header {
+  width: 80%;  /* Ajusta el ancho según prefieras */
+  max-width: 700px; /* Limita el tamaño en pantallas grandes */
+  position: fixed; 
+  top: 20px;  /* Margen desde la parte superior */
+  left: 50%;  /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino para centrar */
+  background-color: rgb(36, 54, 66);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4); /* Sombra para efecto flotante */
+  z-index: 1000;
+}
+
+/* Logo y título */
+.logo {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav li {
+  margin: 5px 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: rgb(98, 149, 132);
+}
+
+/* Ajusta el margen superior del body para que el contenido no se solape con el header */
+body {
+  margin-top: 100px;
+}
+
+/* Ajuste de sección 'sobre mí' */
+#sobre-mi {
+  margin-top: 100px;
+}
